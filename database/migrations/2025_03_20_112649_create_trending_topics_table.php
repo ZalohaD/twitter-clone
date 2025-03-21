@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('trending_topics', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('hashtag_id')->constrained('hashtags');
+            $table->integer('count');
             $table->timestamps();
         });
     }

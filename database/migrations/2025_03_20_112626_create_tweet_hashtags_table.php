@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('tweet_hashtags', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('post_id')->constrained('posts');
+            $table->foreignId('hashtag_id')->constrained('hashtags');
             $table->timestamps();
         });
     }

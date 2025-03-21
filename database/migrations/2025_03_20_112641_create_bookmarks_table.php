@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('post_id')->constrained('posts');
             $table->timestamps();
         });
     }

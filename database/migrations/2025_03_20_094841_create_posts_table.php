@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('post', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained()->onDelete('cascade');
+            $table->foreignId('customers_id')->constrained()->onDelete('cascade');
             $table->text('content');
             $table->string('image')->nullable();
             $table->integer('likes')->default(0);

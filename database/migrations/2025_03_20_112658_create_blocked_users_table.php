@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('blocked_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('customers_id')->constrained('customers');
             $table->foreignId('blocked_id')->constrained('customers');
             $table->timestamps();
         });
